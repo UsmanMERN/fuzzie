@@ -1,10 +1,11 @@
 "use client";
 import { cn } from "@/lib/utils";
+import { SparklesCore } from "./sparkels"
 
 import React from "react";
 import { motion } from "framer-motion";
 
-export function LampDemo() {
+export function LampComponent() {
     return (
         <LampContainer>
             <motion.h1
@@ -17,7 +18,7 @@ export function LampDemo() {
                 }}
                 className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
             >
-                Build lamps <br /> the right way
+                Light Up <br /> Automation
             </motion.h1>
         </LampContainer>
     );
@@ -93,6 +94,17 @@ export const LampContainer = ({
                     }}
                     className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] bg-cyan-400 "
                 ></motion.div>
+
+                <div className="w-[40rem] h-40 relative">
+                    <SparklesCore
+                        background="transparent"
+                        minSize={0.4}
+                        maxSize={1}
+                        particleDensity={1200}
+                        className="w-full h-full"
+                        particleColor="#FFFFFF"
+                    />
+                </div>
 
                 <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-slate-950 "></div>
             </div>
