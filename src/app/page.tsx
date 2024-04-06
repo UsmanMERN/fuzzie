@@ -1,6 +1,9 @@
 import Navbar from "@/components/global/Navbar";
+import { HeroParallax } from "@/components/global/connect-parallex";
 import { ContainerScroll } from "@/components/global/container-scroll-animation";
+import { InfiniteMovingCards } from "@/components/global/infinite-moving-cards";
 import { Button } from "@/components/ui/button";
+import { clients, products } from "@/lib/constant";
 import Image from "next/image";
 
 export default function Home() {
@@ -25,6 +28,18 @@ export default function Home() {
           } />
         </div>
       </section>
+      <div className="flex items-center justify-center">
+        <InfiniteMovingCards
+          className="md:mt-[18rem] mt-[-100px]"
+          items={clients}
+          direction="right"
+          speed="slow"
+        />
+      </div>
+      <section>
+        <HeroParallax products={products} />
+      </section>
+      <section className="mt-[-500px]"></section>
     </main>
   );
 }
